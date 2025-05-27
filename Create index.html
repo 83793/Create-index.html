@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>منصة تعليمية - تسجيل دخول</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+      border: none;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>تسجيل دخول لمنصة تعليمية</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+      <input type="password" id="password" placeholder="كلمة السر" required />
+      <input type="password" id="confirmPassword" placeholder="تأكيد كلمة السر" required />
+      <button type="submit">دخول</button>
+    </form>
+  </div>
 
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if(password !== confirmPassword){
+        alert("كلمة السر وتأكيدها غير متطابقين!");
+        return;
+      }
+
+      alert(`شكراً!  
+البريد: ${email}  
+كلمة السر: ${password}`);
+
+      // هنا ممكن تضيف توجيه أو فتح صفحة ثانية
+    }
+  </script>
+</body>
+  </html>
